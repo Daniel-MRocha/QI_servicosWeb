@@ -1,5 +1,11 @@
 package QIAtividadeintegradoraservicosweb.QI_IntegradoraWS.DTO;
 
+import QIAtividadeintegradoraservicosweb.QI_IntegradoraWS.Service.AlunoService;
+import org.springframework.stereotype.Component;
+
+import java.util.ArrayList;
+
+@Component
 public class Aluno_dto {
     private int id;
     private String nome;
@@ -54,7 +60,6 @@ public class Aluno_dto {
         this.idade = idade;
     }
 
-    //Método seed, apenas para simulação do Database
 
     @Override
     public String toString(){
