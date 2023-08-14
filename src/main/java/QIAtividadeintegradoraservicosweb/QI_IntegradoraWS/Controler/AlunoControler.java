@@ -3,9 +3,7 @@ package QIAtividadeintegradoraservicosweb.QI_IntegradoraWS.Controler;
 import QIAtividadeintegradoraservicosweb.QI_IntegradoraWS.DTO.Aluno_dto;
 import QIAtividadeintegradoraservicosweb.QI_IntegradoraWS.Service.AlunoService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.Optional;
@@ -31,4 +29,19 @@ public class AlunoControler {
         return null;
     }
 
+    @PostMapping(value = "/alunos/{numero}")
+    public void aluno_delete(@PathVariable Integer numero){
+        ArrayList<Aluno_dto> lista_aux = aluno_service.Todos_alunos();
+        var aluno = lista_aux.stream().filter(aln -> aln.getId()==numero).findAny().isPresent();
+        if(aluno){
+            lista_aux.remove((int) numero);
+            System.out.println("apos remoção do indice:" + numero);
+            lista_aux.stream().forEach(s-> System.out.println(s.toString()));
+            aluno_service.atualiza_base(lista_aux);
+            System.out.println("Removeu");
+            aluno_service.Todos_alunos().stream().forEach(s-> System.out.println(s.toString()));
+        }else {
+            System.out.println("Aluno inexistente");
+        }
+    }
 }

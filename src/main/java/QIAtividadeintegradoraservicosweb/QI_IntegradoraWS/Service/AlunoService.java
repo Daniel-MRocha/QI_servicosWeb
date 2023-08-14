@@ -43,5 +43,7 @@ public class AlunoService {
         return aluno;
     }
 
-
+public void atualiza_base(ArrayList<Aluno_dto> lst){
+        simulador_DB.setAluno(lst);
+}
 }
