@@ -34,7 +34,9 @@ public class AlunoControler {
         ArrayList<Aluno_dto> lista_aux = aluno_service.Todos_alunos();
         var aluno = lista_aux.stream().filter(aln -> aln.getId()==numero).findAny().isPresent();
         if(aluno){
-            lista_aux.remove((int) numero);
+            var aluno_para_deletar = lista_aux.stream().filter(aln -> aln.getId()==numero).findAny().get();
+            var indice_do_aluno = lista_aux.indexOf(aluno_para_deletar);
+            lista_aux.remove(indice_do_aluno);
             System.out.println("apos remoção do indice:" + numero);
             lista_aux.stream().forEach(s-> System.out.println(s.toString()));
             aluno_service.atualiza_base(lista_aux);
@@ -43,5 +45,5 @@ public class AlunoControler {
         }else {
             System.out.println("Aluno inexistente");
         }
-    }
+            }
 }
