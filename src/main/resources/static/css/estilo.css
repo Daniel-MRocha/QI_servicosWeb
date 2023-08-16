@@ -1,0 +1,37 @@
+body{
+    display: flex;
+    margin: auto;
+    padding-top: 20px;
+}
+
+#container{
+    border : 2px solid rgb(66, 40, 31);
+    width: 500px;
+    height: 550px;
+    display : flex;
+    margin: auto;
+    flex-direction:column;
+}
+
+#imagem{
+    border : 2px;
+    border-color:blue;
+    border-style: solid;
+    height: 50px;
+}
+
+#conteudo{
+    border : 2px;
+    border-color:blue;
+    border-style: solid;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.linha{
+    display : block;
+    font-size: 7px;
+    color: chocolate;
+}
