@@ -1,5 +1,6 @@
-let url_backend_listagem = "http://localhost:8080/alunos";
-let alunos = new Array();
+   let url_backend_listagem = "http://localhost:8080/alunos";
+
+let alunos = new Array()
 
 let conteudo = document.querySelector("#conteudo_lista")
 
@@ -8,14 +9,13 @@ let conteudo = document.querySelector("#conteudo_lista")
 async function listagem(){
 let lista_promessa = fetch(url_backend_listagem);
 
-return await lista_promessa
+await lista_promessa
 .then(lst => {return lst.json()})
 .then(valor => {
     [...valor].forEach(elem => {
         alunos.push(aluno_construtor(elem))
-    });
+    })  
 })
-
 }
 
 function aluno_construtor(obj){
@@ -34,6 +34,8 @@ function aluno_obj(_id , _nome , _email , _ciclo , _idade){
 
 //busca listagem do backend
 listagem();
+setTimeout(()=>{insere_conteudo()},700)
+
 
 function monta_registro_html(obj){
     let linha = document.createElement("div")
@@ -42,12 +44,10 @@ function monta_registro_html(obj){
     conteudo.insertAdjacentElement("afterbegin",linha)
 }
 
-async function insere_conteudo(obj){
-    for(ele of obj){
+function insere_conteudo(){
+    for(ele of alunos){
         monta_registro_html(ele)
     }
-
 }
 
-()=> setTimeout(alert('ola'),2000)
 

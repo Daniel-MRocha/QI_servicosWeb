@@ -20,7 +20,7 @@ body{
     height: 50px;
 }
 
-#conteudo_lista{
+#conteudo_aluno_unico{
     border : 2px;
     border-color:blue;
     border-style: solid;
@@ -30,5 +30,5 @@ body{
 .linha{
     display : block;
     font-size: 12px;
-    color: rgb(20, 20, 19);
+    color: chocolate;
 }
