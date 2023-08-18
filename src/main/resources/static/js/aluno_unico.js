@@ -29,6 +29,7 @@ let aluno;
     function inseri_aluno(obj){
     let apresenta = document.querySelector("#formulario")
     let insercao = document.createElement("span")
+    insercao.className = "linha"
     apresenta.insertAdjacentElement("afterbegin",insercao)
         insercao.innerHTML = "ID: " + obj.id + " Nome: " + obj.nome + " Email: " + obj.email + " Ciclo: " + obj.ciclo + " Idade: " + obj.idade 
 }

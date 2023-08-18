@@ -5,7 +5,6 @@ body{
 }
 
 #container{
-    border : 2px solid rgb(66, 40, 31);
     width: 600px;
     height: 550px;
     display : flex;
@@ -13,22 +12,45 @@ body{
     flex-direction:column;
 }
 
-#imagem{
-    border : 2px;
-    border-color:blue;
-    border-style: solid;
+#cab{
+    
+    padding: 5px 5px;
     height: 50px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+#logo{
+    height: 65px;
+    width: 65Px;
+}
+
+#informacoes{
+    font-size: 12px;
+    display: inline-block;
+    margin-left: 5px;
 }
 
 #conteudo_aluno_unico{
-    border : 2px;
-    border-color:blue;
+    border : 1px;
+    border-color:rgba(255, 8, 0, 0.856);
     border-style: solid;
-    display: block
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 4px ;
+    
 }
 
 .linha{
     display : block;
-    font-size: 12px;
-    color: chocolate;
+    font-size: 14px;
+    color: rgb(53, 27, 8);
+    margin-left: 30px;
+}
+
+label{
+    font-size: 14px;
+    font-style:italic;
+    color: darkred;
 }

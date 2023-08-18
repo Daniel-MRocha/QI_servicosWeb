@@ -32,12 +32,13 @@ body{
     margin-left: 5px;
 }
 
-#conteudo_lista{
+#conteudo_aluno_delete{
     border : 1px;
     border-color:rgba(255, 8, 0, 0.856);
     border-style: solid;
     display: flex;
     flex-direction: column;
+    padding-bottom: 4px ;
     
 }
 
@@ -45,4 +46,11 @@ body{
     display : block;
     font-size: 14px;
     color: rgb(53, 27, 8);
+    margin-left: 30px;
+}
+
+label{
+    font-size: 14px;
+    font-style:italic;
+    color: darkred;
 }

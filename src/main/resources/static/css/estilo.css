@@ -5,24 +5,36 @@ body{
 }
 
 #container{
-    border : 2px solid rgb(66, 40, 31);
-    width: 500px;
+    width: 600px;
     height: 550px;
     display : flex;
     margin: auto;
     flex-direction:column;
 }
 
-#imagem{
-    border : 2px;
-    border-color:blue;
-    border-style: solid;
+#cab{
+    
+    padding: 5px 5px;
     height: 50px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+#logo{
+    height: 65px;
+    width: 65Px;
+}
+
+#informacoes{
+    font-size: 12px;
+    display: inline-block;
+    margin-left: 5px;
 }
 
 #conteudo{
-    border : 2px;
-    border-color:blue;
+    border : 1px;
+    border-color:rgba(255, 8, 0, 0.856);
     border-style: solid;
     height: 50px;
     display: flex;
@@ -33,5 +45,5 @@ body{
 .linha{
     display : block;
     font-size: 7px;
-    color: chocolate;
+    color: rgb(53, 27, 8);
 }
