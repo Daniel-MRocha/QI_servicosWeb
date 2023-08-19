@@ -4,6 +4,7 @@ import QIAtividadeintegradoraservicosweb.QI_IntegradoraWS.DTO.Aluno_dto;
 import QIAtividadeintegradoraservicosweb.QI_IntegradoraWS.Service.AlunoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.ModelAndView;
 
 import java.util.ArrayList;
 import java.util.Optional;
@@ -30,20 +31,18 @@ public class AlunoControler {
     }
 
     @PostMapping(value = "/alunos/{numero}")
-    public void aluno_delete(@PathVariable Integer numero){
+    public ModelAndView aluno_delete(@PathVariable Integer numero){
         ArrayList<Aluno_dto> lista_aux = aluno_service.Todos_alunos();
         var aluno = lista_aux.stream().filter(aln -> aln.getId()==numero).findAny().isPresent();
         if(aluno){
             var aluno_para_deletar = lista_aux.stream().filter(aln -> aln.getId()==numero).findAny().get();
             var indice_do_aluno = lista_aux.indexOf(aluno_para_deletar);
             lista_aux.remove(indice_do_aluno);
-            System.out.println("apos remoção do indice:" + numero);
-            lista_aux.stream().forEach(s-> System.out.println(s.toString()));
             aluno_service.atualiza_base(lista_aux);
-            System.out.println("Removeu");
-            aluno_service.Todos_alunos().stream().forEach(s-> System.out.println(s.toString()));
+            return new ModelAndView("redirect:/index.html");
         }else {
-            System.out.println("Aluno inexistente");
+            System.out.println("Não excluiu");
+            return new ModelAndView("redirect:/index.html");
         }
-            }
+    }
 }
