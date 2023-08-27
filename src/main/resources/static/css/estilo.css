@@ -1,0 +1,49 @@
+body{
+    display: flex;
+    margin: auto;
+    padding-top: 20px;
+}
+
+#container{
+    width: 600px;
+    height: 550px;
+    display : flex;
+    margin: auto;
+    flex-direction:column;
+}
+
+#cab{
+    
+    padding: 5px 5px;
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+#logo{
+    height: 65px;
+    width: 65Px;
+}
+
+#informacoes{
+    font-size: 12px;
+    display: inline-block;
+    margin-left: 5px;
+}
+
+#conteudo{
+    border : 1px;
+    border-color:rgba(255, 8, 0, 0.856);
+    border-style: solid;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.linha{
+    display : block;
+    font-size: 7px;
+    color: rgb(53, 27, 8);
+}
